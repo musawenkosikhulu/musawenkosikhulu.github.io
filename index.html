@@ -1,116 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musawenkosi Khulu-Physics</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="body">
-    <main>
-      <!-- ***********************  ABOUT / PROFILE  *********************** -->
-      <header>
-        <div class="content-wrap">
-          <h1>Musawenkosi Khulu</h1>
-          <h2>Physicist + Web developer + Data analyst</h2>
-          <!-- <img src="khulu image.jpg" alt="description of image"> -->
-          <p>As a physics graduate, I specialize in positron annhilation spectroscopy and detection of defects <br /> As a self-taught web developer, I love to create website that are centered around science and art.<br /></p>
-          <p>In my undergrad I obtained a social media marketing skill.I love to play and teach chess, learning new things and travelling.</p>
-      </div>
-      </header>
-
-      <!-- ********************  PROJECTS / PORTFOLIO  ********************* -->
-      <section class="projects project-item">
-        <div class="content-wrap">
-          <h2>Projects</h2>
-            <p>View selected projects below. More information can be found at <a href="https://github.com/musawenkosikhulu/HTML_Project1">Github portfolio</a>.</p>
-
-            <!-- Copy the whole <section> block to add more projects. -->
-            <section>
-            <h3>HTML and CSS</h3>
-            <img src="HTMLPic.jpg" alt="description of image">
-            <p>The project is about learning the basic of HTML and CSS to build my own website.<br /> I want to gain enough skills in Front-End development to freelance while I am still in my Physics field.</p>
-            <a href="https://github.com/musawenkosikhulu" target="_blank">My Github Profile</a>
-            </section>
-          </div>
-        <!-- End of Project block. -->
-      </section>
-
-      <!-- ***********************  WORK EXPERIENCE  *********************** -->
-      <section class="work-experience">
-        <div class="content-wrap item-details">
-          <h2>Work Experience</h2>
-          <p>I was employed as a lab assistand and a tutor for first year students.<br />I am a freelance Junior Python data visualiser and analyst with interests in data science.<br />I am a freelance front-end web developer</p>
-          <p>See my complete work history on <a href="https://www.linkedin.com/in/musawenkosi-khulu-6bb696131/">LinkedIn</a>.</p>
-          <!-- Copy this whole <section> block to add more jobs. -->
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Lab assistant</h3>
-              <p>University of Zululand</p>
-              <p>19 Jan 2019-30 Nov 2019</p>
-            </div>
-            <div class="job-summary">
-              <p>I assisted first year students with experiments and assessment based work.</p>
-            </div>
-          </section>
-
-          <section class="job-item">
-            <div class="job-details">
-              <h3>Web developer and Social media manager</h3>
-              <p>Musito Agency</p>
-              <p>19 Nov 2019- present</p>
-            </div>
-            <div class="job summary">
-              <p>I design and develop simple websites. I manage social media accounts for brands.</p>
-            </div>
-            
-          </section>
+    <title>Musawenkosi Khulu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #4CAF50;
+            transition: width .3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .blog-post {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .blog-post h3 {
+            color: #333;
+        }
+        .blog-post p {
+            color: #555;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+        }
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Musawenkosi Khulu</h1>
+    </header>
+    <nav>
+        <a href="#about" onclick="scrollToSection(event, 'about')">About Me</a>
+        <a href="#projects" onclick="scrollToSection(event, 'projects')">Projects</a>
+        <a href="#research" onclick="scrollToSection(event, 'research')">Research</a>
+        <a href="#blog" onclick="scrollToSection(event, 'blog')">Blog</a>
+        <a href="#contact" onclick="scrollToSection(event, 'contact')">Contact</a>
+        <a href="#freelance" onclick="scrollToSection(event, 'freelance')">Freelance Skills</a>
+    </nav>
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <div class="image-container">
+            <img src="https://source.unsplash.com/random/800x400?person" alt="Profile Picture">
         </div>
-        <!-- End of Job block. -->
-      </section>
-
-      <!-- ******************  EDUCATION & CERTIFICATIONS ****************** -->
-      <section class="work-experience" >
-        <div class="content-wrap item-details">
-          <h2>Education</h2>
-
-          <!-- Copy this whole <section> block to add more schools. -->
-          <section>
-            <h3>University of Zululand - KwaDlangezwa, Empangeni 3886</h3>
-            <p>BSc Applied Maths and Physics, 2014-2018</p>
-            <p>I learned the fundamentals of physics with applied maths influence.</p>
-          </section>
-          <section>
-            <h3>University of Zululand - KwaDlangezwa, Empangeni 3886</h3>
-            <p>BSc(Hons) Physics, 2019-2019</p>
-            <p>I learned the fundamentals of physics with the focus on material science in positron physics to be specific.</p>
-          </section>
-          <section>
-            <h3>University of Zululand - KwaDlangezwa, Empangeni 3886</h3>
-            <p>MSc Physics, 2020-2021</p>
-            <p> This is a research based Masters programme.<br /> My topic is : Characterasization of defects in radiation induced semiconductor with positron annihilation technique.</p>
-          </section>
+        <p>Hello! I'm Musawenkosi Khulu, currently working as a Data Engineer at Sanlam. I am also a PhD candidate in Mathematics, specializing in Binary black holes. My work integrates the precision of data engineering with the expansive curiosity of astrophysics.</p>
+    </section>
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <div class="image-container">
+            <img src="https://source.unsplash.com/random/800x400?technology" alt="Projects Image">
         </div>
-        <!-- End of School block. -->
-      </section>
-
-      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-      <footer>
-        <div class="content-wrap">
-          <h2>Let's Keep in Touch!</h2>
-
-          <!-- Social media and contact links. Add or remove any networks. -->
-          <ul class="contacts">
-            <li><a href="Musa :musakhulu.mk@gmail.com">musa@musitoagency.co.za</a></li>
-            <li><a href="http://musitoagency.co.za" target="_blank">musitoagency.co.za</a></li>
-            <li><a href="https://twitter.com/MUSA_KHULU" target="_blank">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/musawenkosi-khulu-6bb696131/" target="_blank">LinkedIn</a></li>
-            <li><a href="http://musitoagency.co.za" target="_blank">Facebook</a></li>
-          </ul>
+        <p>Details about your projects will go here. This could include data engineering projects, astrophysics simulations, or any other relevant work.</p>
+    </section>
+    <section id="research" class="fade-in">
+        <h2>Research</h2>
+        <div class="image-container">
+            <img src="https://source.unsplash.com/random/800x400?space" alt="Research Image">
         </div>
-      </footer>
-    </main>
-  </body>
+        <p>Details about your research will go here. This section can highlight your work on binary black holes and how it intersects with data analysis techniques.</p>
+    </section>
+    <section id="blog" class="fade-in">
+        <h2>Blog</h2>
+        <div class="blog-post">
+            <h3>Title of the First Blog Post</h3>
+            <p>Posted on July 20, 2024</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel elit felis. Phasellus imperdiet, nibh vitae gravida egestas, sapien orci dapibus nulla, a tincidunt tortor lorem nec nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+        <div class="blog-post">
+            <h3>Title of the Second Blog Post</h3>
+            <p>Posted on July 21, 2024</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel elit felis. Phasellus imperdiet, nibh vitae gravida egestas, sapien orci dapibus nulla, a tincidunt tortor lorem nec nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+    </section>
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <p>Details on how to contact you will go here. This can include your email, LinkedIn, or other social media profiles.</p>
+    </section>
+    <section id="freelance" class="fade-in">
+        <h2>Freelance Skills</h2>
+        <p>Details about your freelance skills will go here. This can highlight your expertise in data engineering, data analysis, or any other skills you offer.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Musawenkosi Khulu</p>
+    </footer>
+
+    <script>
+        function scrollToSection(event, sectionId) {
+            event.preventDefault();
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Fade in sections on load
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musawenkosi Khulu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #4CAF50;
+            transition: width .3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .blog-post {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .blog-post h3 {
+            color: #333;
+        }
+        .blog-post p {
+            color: #555;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+        }
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Musawenkosi Khulu</h1>
+    </header>
+    <nav>
+        <a href="#about" onclick="scrollToSection(event, 'about')">About Me</a>
+        <a href="#projects" onclick="scrollToSection(event, 'projects')">Projects</a>
+        <a href="#research" onclick="scrollToSection(event, 'research')">Research</a>
+        <a href="#blog" onclick="scrollToSection(event, 'blog')">Blog</a>
+        <a href="#contact" onclick="scrollToSection(event, 'contact')">Contact</a>
+        <a href="#freelance" onclick="scrollToSection(event, 'freelance')">Freelance Skills</a>
+    </nav>
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <div class="image-container">
+            <img src="https://source.unsplash.com/random/800x400?person" alt="Profile Picture">
+        </div>
+        <p>Hello! I'm Musawenkosi Khulu, currently working as a Data Engineer at Sanlam. I am also a PhD candidate in Mathematics, specializing in Binary black holes. My work integrates the precision of data engineering with the expansive curiosity of astrophysics.</p>
+    </section>
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <div class="image-container">
+            <img src="https://source.unsplash.com/random/800x400?technology" alt="Projects Image">
+        </div>
+        <p>Details about your projects will go here. This could include data engineering projects, astrophysics simulations, or any other relevant work.</p>
+    </section>
+    <section id="research" class="fade-in">
+        <h2>Research</h2>
+        <div class="image-container">
+            <img src="https://source.unsplash.com/random/800x400?space" alt="Research Image">
+        </div>
+        <p>Details about your research will go here. This section can highlight your work on binary black holes and how it intersects with data analysis techniques.</p>
+    </section>
+    <section id="blog" class="fade-in">
+        <h2>Blog</h2>
+        <div class="blog-post">
+            <h3>Title of the First Blog Post</h3>
+            <p>Posted on July 20, 2024</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel elit felis. Phasellus imperdiet, nibh vitae gravida egestas, sapien orci dapibus nulla, a tincidunt tortor lorem nec nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+        <div class="blog-post">
+            <h3>Title of the Second Blog Post</h3>
+            <p>Posted on July 21, 2024</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel elit felis. Phasellus imperdiet, nibh vitae gravida egestas, sapien orci dapibus nulla, a tincidunt tortor lorem nec nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+    </section>
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <p>Details on how to contact you will go here. This can include your email, LinkedIn, or other social media profiles.</p>
+    </section>
+    <section id="freelance" class="fade-in">
+        <h2>Freelance Skills</h2>
+        <p>Details about your freelance skills will go here. This can highlight your expertise in data engineering, data analysis, or any other skills you offer.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Musawenkosi Khulu</p>
+    </footer>
+
+    <script>
+        function scrollToSection(event, sectionId) {
+            event.preventDefault();
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Fade in sections on load
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
 </html>
